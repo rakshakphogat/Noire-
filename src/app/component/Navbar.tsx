@@ -143,27 +143,33 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden md:flex flex-row gap-8">
-          {["HOME", "ABOUT", "COLLECTIONS", "SUPPORT", "CONTACT US"].map(
-            (item, index) => {
-              const paths = [
-                "/",
-                "/about-us",
-                "/products",
-                "/support",
-                "/contact-us",
-              ];
-              return (
-                <button
-                  key={item}
-                  className="cursor-pointer relative font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
-                  onClick={() => router.push(paths[index])}
-                >
-                  {item}
-                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-                </button>
-              );
-            }
-          )}
+          {[
+            "HOME",
+            "ABOUT",
+            "COLLECTIONS",
+            "SUPPORT",
+            "CONTACT US",
+            "ADMIN",
+          ].map((item, index) => {
+            const paths = [
+              "/",
+              "/about-us",
+              "/products",
+              "/support",
+              "/contact-us",
+              "/admin",
+            ];
+            return (
+              <button
+                key={item}
+                className="cursor-pointer relative font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group"
+                onClick={() => router.push(paths[index])}
+              >
+                {item}
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </button>
+            );
+          })}
         </div>
 
         {/* Right Side Actions */}
