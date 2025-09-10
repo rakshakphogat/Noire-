@@ -5,16 +5,17 @@ import { sendOrderStatusUpdateEmail } from "@/lib/email";
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { orderId: string } }
+  { params }: { params: Promise<{ orderId: string }> }
 ) {
   const authResult = await requireAuth(req);
   if (authResult instanceof NextResponse) {
     return authResult;
   }
   try {
+    const { orderId } = await params;
     const { status, trackingNumber } = await req.json();
     const order = await Order.findOneAndUpdate(
-      { _id: params.orderId, userId: authResult.user._id },
+      { _id: orderId, userId: authResult.user._id },
       {
         status,
         ...(trackingNumber && { trackingNumber }),

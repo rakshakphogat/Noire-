@@ -6,7 +6,7 @@ import { IOrderItem } from "@/app/types/Order";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { orderId: string } }
+  { params }: { params: Promise<{ orderId: string }> }
 ) {
   const authResult = await requireAuth(req);
   if (authResult instanceof NextResponse) {
@@ -14,8 +14,9 @@ export async function GET(
   }
 
   try {
+    const { orderId } = await params;
     const order = await Order.findOne({
-      _id: params.orderId,
+      _id: orderId,
       userId: authResult.user._id,
     });
     if (!order) {

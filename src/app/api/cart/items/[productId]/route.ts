@@ -5,9 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { productId: string } }
+  { params }: { params: Promise<{ productId: string }> }
 ) {
   try {
+    const { productId } = await params;
     const body = await req.json();
     const validatedData = updateCartItemSchema.parse(body);
     const identifier: { userId?: string; sessionId?: string } = {};
@@ -30,7 +31,7 @@ export async function PUT(
     }
     const cart = await CartService.updateItemQuantity(
       identifier,
-      params.productId,
+      productId,
       validatedData.quantity
     );
     return NextResponse.json({
@@ -49,9 +50,10 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { productId: string } }
+  { params }: { params: Promise<{ productId: string }> }
 ) {
   try {
+    const { productId } = await params;
     const identifier: { userId?: string; sessionId?: string } = {};
     const token = getTokenFromRequest(req);
     if (token) {
@@ -70,10 +72,7 @@ export async function DELETE(
       }
       identifier.sessionId = sessionId;
     }
-    const cart = await CartService.removeItemFromCart(
-      identifier,
-      params.productId
-    );
+    const cart = await CartService.removeItemFromCart(identifier, productId);
     return NextResponse.json({
       success: true,
       message: "item removed from cart",

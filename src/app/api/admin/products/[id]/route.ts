@@ -93,10 +93,10 @@ export async function GET() {
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     const productIndex = products.findIndex((p) => p.id === id);
     if (productIndex === -1) {
@@ -122,10 +122,10 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const productIndex = products.findIndex((p) => p.id === id);
     if (productIndex === -1) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });

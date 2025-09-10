@@ -4,15 +4,16 @@ import { Order } from "@/lib/models/Order";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { orderId: string } }
+  { params }: { params: Promise<{ orderId: string }> }
 ) {
   const authResult = await requireAuth(req);
   if (authResult instanceof NextResponse) {
     return authResult;
   }
   try {
+    const { orderId } = await params;
     const order = await Order.findOne({
-      _id: params.orderId,
+      _id: orderId,
       userId: authResult.user._id,
     });
     if (!order) {
