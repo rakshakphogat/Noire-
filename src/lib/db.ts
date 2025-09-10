@@ -1,34 +1,42 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const MONGODB_URL = process.env.MONGODB_URL as string;
 
 if (!MONGODB_URL) {
-  throw new Error("Create mongoDB url");
+  throw new Error("Please define the MONGODB_URL environment variable");
 }
 
-let cached = (global as any).mongoose;
-
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
+declare global {
+  var mongoose:
+    | {
+        conn: Mongoose | null;
+        promise: Promise<Mongoose> | null;
+      }
+    | undefined;
 }
 
-export async function connectDB() {
+const cached =
+  global.mongoose ?? (global.mongoose = { conn: null, promise: null });
+
+export async function connectDB(): Promise<Mongoose> {
   if (cached.conn) return cached.conn;
+
   if (!cached.promise) {
     cached.promise = mongoose
       .connect(MONGODB_URL, {
         dbName: "noire",
         bufferCommands: false,
       })
-      .then((mongoose) => {
-        console.log("Connected");
-        return mongoose;
+      .then((m) => {
+        console.log("Connected to MongoDB");
+        return m;
       })
       .catch((err) => {
-        console.log("Error connecting mongoDB");
+        console.error("Error connecting MongoDB", err);
         throw err;
       });
   }
+
   cached.conn = await cached.promise;
   return cached.conn;
 }
