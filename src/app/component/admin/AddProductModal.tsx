@@ -99,7 +99,10 @@ export default function AddProductModal({
     Bags: ["Handbags", "Backpacks", "Travel Bags", "Laptop Bags"],
   };
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = <K extends keyof ProductData>(
+    field: K,
+    value: ProductData[K]
+  ) => {
     setProductData({ ...productData, [field]: value });
   };
 

@@ -67,7 +67,7 @@ export default function AdminProductsPage() {
       router.push("/admin/login");
       return;
     }
-  }, [isAuthenticated, authLoading]);
+  }, [isAuthenticated, authLoading, router]);
 
   useEffect(() => {
     fetchProducts();
@@ -89,7 +89,10 @@ export default function AdminProductsPage() {
     }
   };
 
-  const handleInputChange = (field: keyof ProductFormData, value: any) => {
+  const handleInputChange = <K extends keyof ProductFormData>(
+    field: K,
+    value: ProductFormData[K]
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 

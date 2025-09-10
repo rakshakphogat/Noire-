@@ -22,7 +22,7 @@ interface OrderDetailsModalProps {
   onStatusUpdate: (orderId: string, status: IOrder["status"]) => void;
   onPaymentStatusUpdate: (
     orderId: string,
-    newPaymentStatus: "pending" | "paid" | "failed" | "refunded"
+    newPaymentStatus: "pending" | "paid" | "unpaid"
   ) => Promise<void>;
 }
 

@@ -5,7 +5,7 @@ import { sendOrderConfirmationEmail } from "@/lib/email";
 import { IOrderItem } from "@/app/types/Order";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
+  apiVersion: "2025-08-27.basil",
 });
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -85,12 +85,12 @@ export async function POST(req: NextRequest) {
 
       case "payment_intent.requires_action": {
         const paymentIntent = event.data.object as Stripe.PaymentIntent;
-        // console.log(`Payment requires action: ${paymentIntent.id}`);
+        console.log(`Payment requires action: ${paymentIntent.id}`);
         break;
       }
 
       default:
-        console.log(`ℹUnhandled event type: ${event.type}`);
+        console.log(`Unhandled event type: ${event.type}`);
     }
   } catch (err) {
     console.error("Error handling webhook event:", err);

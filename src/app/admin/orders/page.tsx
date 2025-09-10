@@ -58,7 +58,7 @@ export default function OrdersManagement() {
       router.push("/admin/login");
       return;
     }
-  }, [isAuthenticated, authLoading]);
+  }, [isAuthenticated, authLoading, router]);
 
   useEffect(() => {
     fetchOrders();
@@ -898,12 +898,12 @@ export default function OrdersManagement() {
                     <span className="text-sm text-gray-600 dark:text-gray-300">
                       Payment Issues
                     </span>
-                    <span className="font-semibold text-red-600">
+                    {/* <span className="font-semibold text-red-600">
                       {
                         orders.filter((o) => o.paymentStatus === "failed")
                           .length
                       }
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </CardContent>
