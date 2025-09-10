@@ -4,11 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
     await connectDB();
-    const { id } = params;
+    const { id } = context.params;
     const order = await Order.findById(id);
     if (!order) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 });
