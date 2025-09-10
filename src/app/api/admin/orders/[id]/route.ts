@@ -1,12 +1,14 @@
 import { connectDB } from "@/lib/db";
 import { Order } from "@/lib/models/Order";
-import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextApiRequest) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
     await connectDB();
-    const { id } = request.query;
+    const { id } = params;
     const order = await Order.findById(id);
     if (!order) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 });
@@ -21,11 +23,14 @@ export async function GET(request: NextApiRequest) {
   }
 }
 
-export async function PATCH(request: NextApiRequest) {
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
     await connectDB();
-    const { id } = request.query;
-    const updates = await request.body;
+    const { id } = params;
+    const updates = await request.json();
     const updatedOrder = await Order.findByIdAndUpdate(
       id,
       {
@@ -53,10 +58,13 @@ export async function PATCH(request: NextApiRequest) {
   }
 }
 
-export async function DELETE(request: NextApiRequest) {
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
     await connectDB();
-    const { id } = request.query;
+    const { id } = params;
     const updatedOrder = await Order.findByIdAndUpdate(
       id,
       {

@@ -34,9 +34,7 @@ export const sendPasswordResetEmail = async (
   email: string,
   resetToken: string
 ) => {
-  const resetLink = `${
-    process.env.NEXTAUTH_URL || "http://localhost:3000"
-  }/auth/reset-password?token=${resetToken}`;
+  const resetLink = `${process.env.NEXTAUTH_URL}/auth/reset-password?token=${resetToken}`;
 
   const emailHtml = `
     <!DOCTYPE html>
