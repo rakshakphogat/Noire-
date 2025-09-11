@@ -65,9 +65,9 @@ export default function GoogleLogin({ disabled }: GoogleLoginProps) {
         />
       </svg>
       {isLoading ? (
-        <p className="text-white">Loading...</p>
+        <p className="text-gray-300">Loading...</p>
       ) : (
-        <p className="text-white">Continue with Google</p>
+        <p className="text-gray-300">Continue with Google</p>
       )}
     </Button>
   );
