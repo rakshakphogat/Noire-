@@ -11,3 +11,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   right: 10px; /* adjust spacing */
   cursor: pointer;
 }
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE/Edge */
+}
