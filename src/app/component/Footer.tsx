@@ -20,6 +20,7 @@ export default function Footer() {
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about-us" },
     { label: "Contact", path: "/contact-us" },
+    { label: "Customer Support", path: "/support" },
     { label: "Privacy Policy", path: "/privacy-policy" },
   ];
 
