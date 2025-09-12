@@ -195,7 +195,7 @@ export default function CartPage() {
               </p>
               <Link
                 href="/products"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2 cursor-pointer"
               >
                 <span>Continue Shopping</span>
                 <ArrowRight className="w-4 h-4" />
@@ -264,7 +264,7 @@ export default function CartPage() {
                             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                               <Link
                                 href={`/products/${item.productId}`}
-                                className="hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:bg-clip-text hover:text-transparent transition-all duration-300"
+                                className="hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:bg-clip-text hover:text-transparent transition-all duration-300 cursor-pointer"
                               >
                                 {item.name}
                               </Link>
@@ -677,7 +677,7 @@ export default function CartPage() {
                 href="/checkout"
                 className={`w-full py-4 px-6 rounded-xl font-semibold mt-8 flex items-center justify-center space-x-2 transition-all duration-300 ${
                   selectedAddress
-                    ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+                    ? "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                     : "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed"
                 }`}
                 onClick={(e) => {
@@ -698,7 +698,7 @@ export default function CartPage() {
 
               <Link
                 href="/products"
-                className="w-full border border-gray-300/50 dark:border-gray-600/50 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm py-4 px-6 rounded-xl font-medium text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500 hover:bg-white/70 dark:hover:bg-gray-800/70 mt-4 flex items-center justify-center transition-all duration-300"
+                className="w-full border border-gray-300/50 dark:border-gray-600/50 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm py-4 px-6 rounded-xl font-medium text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500 hover:bg-white/70 dark:hover:bg-gray-800/70 mt-4 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 Continue Shopping
               </Link>

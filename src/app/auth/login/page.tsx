@@ -260,35 +260,35 @@ function LoginSignupForm() {
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
       </div>
 
-      <div className="relative flex items-center justify-center min-h-screen px-4 py-8">
-        <Card className="w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl shadow-2xl border-0">
-          <CardHeader className="text-center space-y-2">
+      <div className="relative flex items-center justify-center min-h-screen px-4 py-6 sm:py-8">
+        <Card className="w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl shadow-2xl border-0 mx-4">
+          <CardHeader className="text-center space-y-2 px-4 sm:px-6">
             {/* Brand Logo */}
             <div className="flex items-center justify-center mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
             </div>
-            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+            <CardTitle className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
               Welcome to NOIRE&apos;
             </CardTitle>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Sign in to your account or create a new one to continue
             </p>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 px-4 sm:px-6 pb-6">
             <Tabs defaultValue="login" className="w-full">
               <TabsList className="grid w-full grid-cols-2 bg-gray-100/50 dark:bg-gray-700/50 p-1 rounded-xl">
                 <TabsTrigger
                   value="login"
-                  className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-md rounded-lg transition-all duration-300 text-gray-300 cursor-pointer"
+                  className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-md rounded-lg transition-all duration-300 text-gray-700 dark:text-gray-200 data-[state=active]:text-gray-900 dark:data-[state=active]:text-white cursor-pointer"
                 >
                   <User className="w-4 h-4 mr-2" />
                   Login
                 </TabsTrigger>
                 <TabsTrigger
                   value="signup"
-                  className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-md rounded-lg transition-all duration-300 text-gray-300 cursor-pointer"
+                  className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-800 data-[state=active]:shadow-md rounded-lg transition-all duration-300 text-gray-700 dark:text-gray-200 data-[state=active]:text-gray-900 dark:data-[state=active]:text-white cursor-pointer"
                 >
                   <ShieldCheck className="w-4 h-4 mr-2" />
                   Sign Up
@@ -332,7 +332,7 @@ function LoginSignupForm() {
                         value={loginData.email}
                         onChange={handleLoginInputChange}
                         required
-                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -363,7 +363,7 @@ function LoginSignupForm() {
                         value={loginData.password}
                         onChange={handleLoginInputChange}
                         required
-                        className="pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                        className="pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                       />
                       <Button
                         type="button"
@@ -432,7 +432,7 @@ function LoginSignupForm() {
                           value={signupData.firstName}
                           onChange={handleSignupInputChange}
                           required
-                          className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                          className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                         />
                       </div>
                     </div>
@@ -452,7 +452,7 @@ function LoginSignupForm() {
                           value={signupData.lastName}
                           onChange={handleSignupInputChange}
                           required
-                          className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                          className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                         />
                       </div>
                     </div>
@@ -475,7 +475,7 @@ function LoginSignupForm() {
                         value={signupData.email}
                         onChange={handleSignupInputChange}
                         required
-                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -496,7 +496,7 @@ function LoginSignupForm() {
                         placeholder="+1 (555) 123-4567"
                         value={signupData.phone}
                         onChange={handleSignupInputChange}
-                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-300"
+                        className="pl-10 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-300 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                       />
                     </div>
                   </div>
@@ -518,7 +518,7 @@ function LoginSignupForm() {
                         value={signupData.password}
                         onChange={handleSignupInputChange}
                         required
-                        className={`pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl text-gray-300 transition-all duration-300 ${
+                        className={`pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-all duration-300 ${
                           passwordErrors.length
                             ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                             : ""
@@ -560,7 +560,7 @@ function LoginSignupForm() {
                         value={signupData.confirmPassword}
                         onChange={handleSignupInputChange}
                         required
-                        className={`pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 text-gray-300 rounded-xl transition-all duration-300 ${
+                        className={`pl-10 pr-12 bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 rounded-xl transition-all duration-300 ${
                           passwordErrors.match
                             ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                             : ""

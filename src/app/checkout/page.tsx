@@ -512,7 +512,7 @@ export default function CheckoutPage() {
                       </p>
                       <Button
                         onClick={() => router.push("/profile/addresses")}
-                        className="bg-blue-600 hover:bg-blue-700 text-white"
+                        className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
                       >
                         Add Address
                       </Button>

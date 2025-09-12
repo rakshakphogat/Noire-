@@ -95,7 +95,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               onClick={reset}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
+              className="flex-1 cursor-pointer bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
               size="lg"
             >
               <RefreshCw className="mr-2 h-5 w-5" />
@@ -105,7 +105,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
             <Button
               onClick={handleGoHome}
               variant="outline"
-              className="flex-1 border-gray-300 dark:border-gray-600"
+              className="flex-1 cursor-pointer border-gray-300 dark:border-gray-600"
               size="lg"
             >
               <Home className="mr-2 h-5 w-5" />
@@ -124,7 +124,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
               <Button
                 onClick={handleReportIssue}
                 variant="ghost"
-                className="flex-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="flex-1 cursor-pointer text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
                 size="sm"
               >
                 <Mail className="mr-2 h-4 w-4" />
@@ -134,7 +134,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
               <Button
                 onClick={() => window.location.reload()}
                 variant="ghost"
-                className="flex-1 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="flex-1 cursor-pointer text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
                 size="sm"
               >
                 <RefreshCw className="mr-2 h-4 w-4" />

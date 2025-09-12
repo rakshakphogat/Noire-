@@ -59,7 +59,7 @@ export default function NotFound() {
 
             {/* Navigation Options */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link href="/" passHref className="block">
+              <Link href="/" passHref className="block cursor-pointer">
                 <Button
                   className="w-full cursor-pointer h-auto p-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   size="lg"

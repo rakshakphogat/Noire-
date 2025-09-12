@@ -57,29 +57,29 @@ export default function Home() {
         </h1>
         {/* Hero Section */}
         <div className="px-4 sm:px-6 lg:px-10">
-          <div className="flex flex-col lg:flex-row backdrop-blur-sm bg-white/60 dark:bg-gray-800/60 border border-white/20 dark:border-gray-700/30 shadow-2xl w-full min-h-[60vh] sm:min-h-[70vh] lg:h-[80vh] mt-6 sm:mt-8 lg:mt-10 overflow-hidden rounded-3xl">
+          <div className="flex flex-col lg:flex-row backdrop-blur-sm bg-white/60 dark:bg-gray-800/60 border border-white/20 dark:border-gray-700/30 shadow-2xl w-full min-h-[50vh] sm:min-h-[60vh] lg:h-[80vh] mt-4 sm:mt-6 lg:mt-10 overflow-hidden rounded-2xl lg:rounded-3xl">
             {/* Text Content */}
-            <div className="flex-1 flex flex-col items-center justify-center p-6 sm:p-8 lg:p-12 text-center lg:text-left order-2 lg:order-1">
+            <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 lg:p-12 text-center lg:text-left order-2 lg:order-1">
               <div className="max-w-lg">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 lg:mb-8 leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
                   Redefining the Modern Wardrobe
                 </h1>
-                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                   Discover timeless elegance meets contemporary style. Crafted
                   for those who dare to stand out.
                 </p>
                 <Button
                   onClick={onClickHandle}
-                  className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-base sm:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center"
                 >
                   Explore All Products
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>
               </div>
             </div>
 
             {/* Image */}
-            <div className="flex-1 relative aspect-[16/9] lg:aspect-[4/3] order-1 lg:order-2">
+            <div className="flex-1 relative aspect-[16/9] sm:aspect-[4/3] lg:aspect-[4/3] order-1 lg:order-2 min-h-[200px] sm:min-h-[250px]">
               <Image
                 src={MainBanner}
                 alt="Fashion Collection"
@@ -94,23 +94,23 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="mt-16 sm:mt-20 lg:mt-24 px-4 sm:px-6 lg:px-10">
+        <div className="mt-12 sm:mt-16 lg:mt-24 px-4 sm:px-6 lg:px-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
                   <div
                     key={index}
-                    className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:scale-105"
+                    className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 rounded-xl lg:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:scale-105"
                   >
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:rotate-6 transition-transform duration-300">
-                      <Icon className="h-7 w-7 text-white" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:rotate-6 transition-transform duration-300">
+                      <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                     </div>
-                    <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">
+                    <h3 className="font-bold text-base sm:text-lg text-gray-900 dark:text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -188,11 +188,11 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto">
                 <Input
                   aria-label="Email address"
-                  className="w-full sm:flex-1 p-4 text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-white/20 dark:border-gray-700/30 rounded-xl shadow-lg focus:ring-2 focus:ring-blue-500/20 text-white"
+                  className="w-full sm:flex-1 p-4 text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200/50 dark:border-gray-700/50 rounded-xl shadow-lg focus:ring-2 focus:ring-blue-500/20 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
                   placeholder="Enter your email address"
                   type="email"
                 />
-                <Button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto whitespace-nowrap">
+                <Button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 lg:px-8 py-4 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full sm:w-auto whitespace-nowrap">
                   Subscribe Now
                 </Button>
               </div>
